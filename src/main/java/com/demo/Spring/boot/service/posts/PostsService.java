@@ -45,6 +45,7 @@ public class PostsService {
     }
     @Transactional
     public void delete(Long id){
+
         Posts post = reposi.findById(id).orElseThrow(() -> new IllegalArgumentException(id + "번 글이없음"));
         reposi.delete(post);
     }

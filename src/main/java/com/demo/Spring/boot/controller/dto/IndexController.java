@@ -32,9 +32,5 @@ public class IndexController {
         md.addAttribute("post",dto);
         return "posts-update";
     }
-    @DeleteMapping("/api/v1/posts/{id}")
-    public Long delete(@PathVariable Long id){
-        service.delete(id);
-        return id;
-    }
+
 }
