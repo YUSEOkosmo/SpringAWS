@@ -3,10 +3,10 @@ package com.demo.Spring.boot.config.auth.dto;
 import com.demo.Spring.boot.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
-//
-//import com.demo.Spring.boot.domain.user.Role;
+
+import com.demo.Spring.boot.domain.user.Role;
 import java.util.Map;
-import javax.management.relation.Role;
+//import javax.management.relation.Role;
 @Getter
 public class OAuthAttributes{
     private Map<String, Object> attributes;

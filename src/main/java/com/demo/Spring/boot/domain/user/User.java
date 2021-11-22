@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.management.relation.Role;
+import com.demo.Spring.boot.domain.user.Role;
 import javax.persistence.*;
 
 @Getter
