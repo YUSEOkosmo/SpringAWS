@@ -88,8 +88,8 @@ public class PostsAPIControllerTest {
         Posts savepost = reposi.save(Posts.builder()
                 .title("제목").content("내용").writer("글쓴이").build());
         Long updatedID = savepost.getId();
-        String expectTitle = "제목2";
-        String expectContenet = "내용2";
+        String expectTitle = "title";
+        String expectContenet = "content";
 
         PostsUpdateRequestDTO dto = PostsUpdateRequestDTO.builder()
                 .title(expectTitle)

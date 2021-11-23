@@ -29,8 +29,8 @@ public class PostsRepositoryTest {
     @Test
     public void 쓰기_저장(){
         //given
-        String title = "제목";
-        String content = "본문";
+        String title = "TITLE";
+        String content = "CONTENT";
         reposi.save(Posts.builder().title(title).content(content).writer("글쓴이").build());
         //when
         List<Posts> postList = reposi.findAll();
