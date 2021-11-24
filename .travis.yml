@@ -33,7 +33,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: dellyoo-s3bucket
-    key: SpringAWS.zip
+    key: Spring_AWS2.zip
     bundle_type: zip
     application: SpringAWS_codedeploy
     deployment_group: Spring_AWS_codedeploy_group
