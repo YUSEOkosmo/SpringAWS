@@ -1,0 +1,20 @@
+language: java
+jdk:
+  - oraclejdk11
+branches:
+  only:
+    - master
+
+# TRAVIS ci 서버 HOME
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+#CI 완료후 메일전송
+notifications:
+  email:
+    recipients:
+      - 22307one@naver.com
