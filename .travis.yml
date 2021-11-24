@@ -6,8 +6,16 @@ branches:
     - master
 before_install:
   chmod +x gradlew
+# TRAVIS ci 서버 HOME
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
 before_deploy:
-  - zip -r SpringAws
+  - zip -r SpringAWS *
   - mkdir -p deploy
   - mv SpringAWS.zip deploy/SpringAWS.zip
 deploy:
@@ -20,13 +28,7 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed: true
-# TRAVIS ci 서버 HOME
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
 
-script: "./gradlew clean build"
 
 #CI 완료후 메일전송
 notifications:
