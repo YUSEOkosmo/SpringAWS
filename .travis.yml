@@ -35,7 +35,7 @@ deploy:
     bucket: spring-bucket2
     key: SpringAWS.zip
     bundle_type: zip
-    application: SpringAWS
+    application: aws_codedeploy
     deployment_group: aws_codedeploy_group
     region: ap-northeast-2
     wait-until-deployed: true
