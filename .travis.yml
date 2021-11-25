@@ -17,29 +17,17 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r SpringAWS *
   - mkdir -p deploy
-  - mv SpringAWS.zip deploy/SpringAWS.zip
+  - mv SpringAWS2.zip deploy/SpringAWS2.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: dellyoo-s3bucket
+    bucket: spring-bucket2
     region: ap-northeast-2
     skip-cleanup: true
     acl: private
     local_dir: deploy
     wait-until-deployed: true
-
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: dellyoo-s3bucket
-    key: Spring_AWS2.zip
-    bundle_type: zip
-    application: SpringAWS_codedeploy
-    deployment_group: SpringAWS_codedeploy_group
-    region: ap-northeast-2
-    wait-until-deployed: true
-
 
 
 #CI 완료후 메일전송
