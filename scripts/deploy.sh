@@ -5,7 +5,7 @@ PROJECT_NAME=SpringAWS
 echo ">빌드파일 복사"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 echo ">구동중인 어플 PID확인"
-CURRENT_PID=$(pgrep -fl SpringAWS | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl SpringAWS | grep java | awk '{print $1}')
 echo "> PID: $CURRENT_PID"
 if [ -z "$CURRENT_PID" ]; then
   echo "> 구동중인게없음"
