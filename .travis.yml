@@ -15,9 +15,13 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r SpringAWS *
-  - mkdir -p deploy
-  - mv SpringAWS.zip deploy/SpringAWS.zip
+  - mkdir -p before-deploy
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cp build/libs/*.jar before-deploy/
+  - cd before-deploy && zip -r before-deploy *
+  - cd ../ && mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/SpringAWS.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
@@ -33,7 +37,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: spring-bucket2
-    key: SpringAWS.zip
+    key: SpringAWS.zip #리포지토리 이름이어야했다
     bundle_type: zip
     application: aws_codedeploy
     deployment_group: aws_codedeploy_group
