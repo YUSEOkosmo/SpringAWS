@@ -33,9 +33,9 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: spring-bucket2
-    key: Spring_AWS2.zip
+    key: SpringAWS.zip
     bundle_type: zip
-    application: aws_codedeploy
+    application: SpringAWS
     deployment_group: aws_codedeploy_group
     region: ap-northeast-2
     wait-until-deployed: true
