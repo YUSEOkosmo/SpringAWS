@@ -4,7 +4,7 @@ REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=SpringAWS
 echo ">빌드파일 복사"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
-echo ">구동중인 어플 PID확인"
+echo ">--구동중인 어플 PID확인--"
 CURRENT_PID=$(ps -ef | grep java | awk '{print $2}')
 echo "> PID: $CURRENT_PID"
 echo "> 이름: $PROJECT_NAME"
