@@ -7,8 +7,8 @@ source ${ABSDIR}/switch.sh
 
 IDLE_PORT=$(find_idle_port)
 
-echo "> HEALTH CHECK"
-echo "> IDLE_PORT = $IDLE_PORT"
+echo "> Health Check Start!"
+echo "> IDLE_PORT: $IDLE_PORT"
 echo "> curl -s http://localhost:$IDLE_PORT/profile "
 sleep 10
 
