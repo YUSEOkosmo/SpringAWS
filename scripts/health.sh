@@ -27,7 +27,7 @@ do
     echo "> HEALTH CHECK: ${RESPONSE}"
   fi
 
-  if [ ${RETRY_COUNT} -eq 10]
+  if [ ${RETRY_COUNT} -eq 10 ]
   then
     echo "> HEALTH체크 실패"
     echo "> nginx에 연결하지않고 배포종료"
