@@ -9,7 +9,7 @@ function switch_proxy(){
 
   echo "> 전환할포트 : $IDLE_PORT"
   echo "> PORT전환"
-  echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/conf.d/service-url.inc
+  echo "set \$service_url ec2-52-78-73-19.ap-northeast-2.compute.amazonaws.com:${IDLE_PORT};" | sudo tee /etc/nginx/conf.d/service-url.inc
   echo "> nginx 리로드"
   sudo service nginx reload
 }

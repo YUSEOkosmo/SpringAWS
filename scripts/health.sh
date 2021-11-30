@@ -9,7 +9,7 @@ IDLE_PORT=$(find_idle_port)
 
 echo "> Health Check Start"
 echo "> IDLE_PORT: $IDLE_PORT"
-echo "> curl -s http://localhost:$IDLE_PORT/profile "
+echo "> curl -s ec2-52-78-73-19.ap-northeast-2.compute.amazonaws.com:$IDLE_PORT/profile "
 sleep 10
 
 for RETRY_COUNT in {1..10}
